@@ -10,7 +10,10 @@
 }
 body {
     font-size: 16px;
+   
 }
+
+
 
 header {
     background-color: var(--background);
@@ -29,6 +32,7 @@ h1, h2, h3, h4, h5 {
     background-color: var(--background);
     color: var(--foreground);
     padding: 0 2rem;
+
 }
 
 .day-date {
@@ -39,10 +43,10 @@ h1, h2, h3, h4, h5 {
 
 .day-languages {
     width: 100%;
-    display: flex;
+    /* display: flex; */
     list-style: none;
     justify-content: center;
-    overflow: wrap;
+    /* overflow: hidden; */
 }
 
 .day-languages li {
@@ -51,6 +55,7 @@ h1, h2, h3, h4, h5 {
     background-color: var(--selected-green);
     border-radius: 3px;
     cursor: pointer;
+    display: inline-block;
 }
 
 .header-title {
