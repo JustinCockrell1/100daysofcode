@@ -1,7 +1,8 @@
 const content = document.getElementById("content");
 
+let day = 1;
 
-fetch("./days/day1.html").then(response=>response.text())
+fetch(`./days/day${day}.html`).then(response=>response.text())
 .then(data=>{content.innerHTML = data; loadLeetCodes();});
 
 
