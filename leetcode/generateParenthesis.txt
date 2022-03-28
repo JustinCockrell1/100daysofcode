@@ -1,0 +1,42 @@
+class Solution {
+public:
+    vector<string> generateParenthesis(int n) {
+        
+            vector<string> result;
+            string first = "", second ="";
+            for(int i = 0; i < n-1; i++) {
+                first+="(";
+                second+=")";
+            }
+  
+        
+            cout << first.size() << second.size();
+        
+            result.push_back("("+first+second+")");
+        
+            for(int i = 1; i <= n/2; i++) {
+                for(int j = 0; j < first.size()/i; j+=i) {
+                    for(int k =0; k < second.size()/i; k+=i) {
+                        string f = first;
+                        string s = second;
+                        for(int c = 0; c < i; c++) { 
+                        f.at(j+i*c) = ')';
+                        s.at(k+i*c)='(';
+                        }
+                        
+        
+                        reverse(f.begin(), f.end());
+                        result.push_back("("+f+s+")");
+                    }
+                }
+            }
+                
+            return result;
+        
+
+    }
+
+  
+    
+    
+};

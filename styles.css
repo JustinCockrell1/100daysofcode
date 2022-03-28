@@ -1,0 +1,85 @@
+
+:root {
+    --selected-green:#11f730;
+    --background:#141313;
+    --foreground:white;
+}
+* {
+    margin:0;
+    padding:0;
+}
+body {
+    font-size: 16px;
+}
+
+header {
+    background-color: var(--background);
+    color: var(--foreground);
+    padding: 2rem;
+    width:100%;
+}
+
+h1, h2, h3, h4, h5 {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.day-description {
+    width: 100%;
+    text-align: center;
+    background-color: var(--background);
+    color: var(--foreground);
+}
+
+.day-date {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    font-size: 2rem;
+    font-weight: bold;
+    
+}
+
+.day-languages {
+    display: flex;
+    list-style: none;
+    justify-content: center;
+}
+
+.day-languages li {
+    margin: 1rem;
+    padding: .5rem;
+    background-color: var(--selected-green);
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.header-title {
+    font-size: 3.5rem;
+    text-align: center;
+    
+}
+
+.section-title {
+    width:100%;
+    background-color: var(--background);
+    color: var(--foreground);
+    
+    padding: 2rem;
+    text-align: center;
+}
+
+.section-title h1 {
+    font-size: 3rem;
+}
+
+.section-body {
+    padding: 4rem;
+    font-size: 1.6rem;
+}
+
+pre.leetcode-code {
+    font-size: 1rem;
+    overflow-x: scroll;
+    width: fit-content;
+}
+
