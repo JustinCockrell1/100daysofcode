@@ -1,10 +1,16 @@
 const content = document.getElementById("content");
+const nextDayBtn = document.getElementById("next-day");
+const prevDayBtn = document.getElementById("prev-day");
 
 let day = 1;
 
+
+function loadPage() {
+
 fetch(`./days/day${day}.html`).then(response=>response.text())
 .then(data=>{content.innerHTML = data; loadLeetCodes();});
-
+loadLeetCodes();
+}
 
 function loadLeetCodes() {
 
@@ -20,3 +26,17 @@ leetcodes.forEach((code)=>{
 });
 
 }
+
+nextDayBtn.onclick = () =>{
+    if(day<2) {day++;
+    loadPage();
+    }
+}
+prevDayBtn.onclick = () => {
+    if(day>1) {day--;
+    loadPage();
+    }
+}
+
+
+loadPage();
