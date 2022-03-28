@@ -13,6 +13,9 @@ body {
    
 }
 
+img {
+    width: 30%;
+}
 
 header {
     background-color: var(--background);
@@ -32,6 +35,7 @@ button {
     outline: none;
     border-radius: 3px;
     margin: .2rem;
+    cursor: pointer;
 }
 
 .day-description {
