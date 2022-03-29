@@ -28,7 +28,7 @@ leetcodes.forEach((code)=>{
 }
 
 nextDayBtn.onclick = () =>{
-    if(day<2) {day++;
+    if(day<3) {day++;
     loadPage();
     }
 }

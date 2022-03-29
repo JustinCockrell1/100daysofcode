@@ -110,4 +110,7 @@ pre.leetcode-code {
     .section-body {
         padding: 2rem 0;
     }
+    img {
+        width: 80%;
+    }
 }
