@@ -17,6 +17,16 @@ img {
     width: 30%;
 }
 
+td, th {
+    border: 1px solid black;
+    margin: 0;
+}
+table {
+    padding: 0;
+    margin: 0;
+    border-collapse: collapse;
+}
+
 header {
     background-color: var(--background);
     color: var(--foreground);
