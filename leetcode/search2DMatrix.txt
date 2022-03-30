@@ -1,0 +1,46 @@
+class Solution {
+public:
+    bool searchMatrix(vector<vector<int>>& matrix, int target) {
+       
+        int min = 0; int max = matrix.size()-1;
+        int pos;
+        while(1) {
+            
+        if(max<min) return false;
+        pos = (max-min)/2+min;
+        if(matrix[pos].size()>0) {
+            int first = matrix[pos][0];
+            if(first>target) {
+                max=pos-1;
+            }
+            else if(first<target) {
+                if(target <= matrix[pos][matrix[pos].size()-1]) {
+                    break;
+                }
+                else min=pos+1;
+            }
+            else {
+                return true;
+            }
+        }
+            
+        }
+        
+        //binary search the inner array
+        min = 0; max = matrix[pos].size()-1;
+        int pos2;
+        while(max>=min) {
+        pos2 = (max-min)/2+min;
+        if(matrix[pos][pos2]<target) {
+            min=pos2+1;
+        }
+        else if(matrix[pos][pos2]>target) {
+            max=pos2-1;
+        }
+        else {
+            return true;
+        }
+        }
+        return false;
+    }
+};

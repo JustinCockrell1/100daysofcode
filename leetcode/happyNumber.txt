@@ -1,0 +1,29 @@
+class Solution {
+public:
+    bool isHappy(int n) {
+        
+        unordered_set<int> s;
+        
+        
+        while(1) {
+        vector<int> digits;
+        while(n!=0) {
+        int d = n%10;
+        digits.push_back(n%10);
+        n/=10;
+        }
+        
+        
+        for(int i = 0; i < digits.size(); i++) {
+            n+=digits[i]*digits[i];
+        }
+            
+        if(n==1) return true;
+        if(s.find(n)!=s.end()) return false;
+            cout << n;
+        s.insert(n);
+        }
+        
+        return true;
+    }
+};
