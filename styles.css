@@ -13,6 +13,14 @@ body {
    
 }
 
+.navigation {
+    width:2rem;
+    height: 100vh;
+    background-color: grey;
+    position: fixed;
+    top: 0;
+}
+
 img {
     width: 30%;
 }

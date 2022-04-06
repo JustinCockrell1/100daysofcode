@@ -3,6 +3,7 @@ const nextDayBtn = document.querySelectorAll(".next-day");
 const prevDayBtn = document.querySelectorAll(".prev-day");
 
 let day = 1;
+let numDays=10;
 
 
 function loadPage() {
@@ -28,7 +29,7 @@ leetcodes.forEach((code)=>{
 }
 
 nextDayBtn.forEach(btn=>btn.onclick = () =>{
-    if(day<10) {day++;
+    if(day<numDays) {day++;
     loadPage();
     }
 }
