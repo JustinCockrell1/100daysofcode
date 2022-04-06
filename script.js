@@ -1,6 +1,6 @@
 const content = document.getElementById("content");
-const nextDayBtn = document.getElementById("next-day");
-const prevDayBtn = document.getElementById("prev-day");
+const nextDayBtn = document.querySelectorAll(".next-day");
+const prevDayBtn = document.querySelectorAll(".prev-day");
 
 let day = 1;
 
@@ -27,16 +27,17 @@ leetcodes.forEach((code)=>{
 
 }
 
-nextDayBtn.onclick = () =>{
-    if(day<9) {day++;
+nextDayBtn.forEach(btn=>btn.onclick = () =>{
+    if(day<10) {day++;
     loadPage();
     }
 }
-prevDayBtn.onclick = () => {
+);
+prevDayBtn.forEach(btn=>btn.onclick = () => {
     if(day>1) {day--;
     loadPage();
     }
-}
+});
 
 
 loadPage();
