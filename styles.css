@@ -1,4 +1,3 @@
-
 :root {
     --selected-green:#11f730;
     --background:#141313;
@@ -13,13 +12,40 @@ body {
    
 }
 
-.navigation {
-    width:2rem;
+
+
+.navigation-content {
+    width:30%;
     height: 100vh;
-    background-color: grey;
+    background-color: darkgrey;
     position: fixed;
     top: 0;
+    transform: translateX(-100%);
+    transition: all .3s;
 }
+
+.navigation-content.open {
+    transform: translateX(0);
+}
+
+.navigation-button {
+    font-size: 1.6rem;
+    cursor: pointer;
+    color: grey;
+    /* background-color: grey; */
+    
+    width: 2rem;
+    height: 2rem;
+    position: fixed;
+    /* background-color: black; */
+    top:10px; 
+    left:10px;
+    z-index: 10;
+   
+   
+}
+
+
 
 img {
     width: 30%;
