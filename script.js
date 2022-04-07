@@ -7,16 +7,25 @@ const navigationIcon = document.querySelector(".navigation-button i");
 const navigationContent = document.querySelector(".navigation-content");
 
 let day = 1;
-let numDays=10;
+let numDays=11;
 
+let savedDay = localStorage.getItem("day");
+if(savedDay!=null) {
+    day = savedDay;
+}
+
+loadNavigation();
 
 function loadPage() {
+
+
+
 
 fetch(`./days/day${day}.html`).then(response=>response.text())
 .then(data=>{
     content.innerHTML = data; loadLeetCodes();
     loadLeetCodes();
-loadNavigation();
+
 });
 
 }
@@ -38,20 +47,28 @@ leetcodes.forEach((code)=>{
 
 function loadNavigation() {
     for(let i = 1; i <= numDays; i++) {
-    navigationContent.innerHTML +=`<h1>Day ${i}</h1>`;
+    navigationContent.innerHTML +=`<h1 onclick="setPage('${i}')">Day ${i}</h1>`;
     }
 
+}
+
+function setPage(d) {
+    day = d;
+    localStorage.setItem("day", day);
+    loadPage();
 }
 
 nextDayBtn.forEach(btn=>btn.onclick = () =>{
     if(day<numDays) {day++;
     loadPage();
+    localStorage.setItem("day", day);
     }
 }
 );
 prevDayBtn.forEach(btn=>btn.onclick = () => {
     if(day>1) {day--;
     loadPage();
+    localStorage.setItem("day", day);
     }
 });
 
