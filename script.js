@@ -7,7 +7,7 @@ const navigationIcon = document.querySelector(".navigation-button i");
 const navigationContent = document.querySelector(".navigation-content");
 
 let day = 1;
-let numDays=14;
+let numDays=15;
 
 let savedDay = localStorage.getItem("day");
 if(savedDay!=null) {
